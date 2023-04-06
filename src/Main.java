@@ -4,11 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-        System.out.println(findAverage(n, arr));
+        System.out.println(isNumberPrime(n));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -25,5 +21,13 @@ public class Main {
             total += numbers[i];
         }
         return total / n;
+    }
+    public static boolean isNumberPrime(int n) {
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
