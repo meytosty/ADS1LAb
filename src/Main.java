@@ -3,9 +3,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
         int n = sc.nextInt();
-        System.out.println(findPow(a, n));
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(findReverse(n, arr));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -53,6 +56,14 @@ public class Main {
         }
         else {
             return a * findPow(a, n-1);
+        }
+    }
+    public static String findReverse(int n, int[] numbers) {
+        if (n == 1) {
+            return Integer.toString(numbers[0]);
+        }
+        else {
+            return Integer.toString(numbers[n-1]) + " " + findReverse(n-1, numbers);
         }
     }
 }
