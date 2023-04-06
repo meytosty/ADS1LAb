@@ -79,4 +79,5 @@ public class Main {
             return findBin(n-1, k-1) + findBin(n-1, k);
         }
     }
+
 }
