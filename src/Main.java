@@ -3,12 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-        System.out.println(findReverse(n, arr));
+        String text = sc.nextLine();
+        System.out.println(isAllNumbers(text));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -64,6 +60,14 @@ public class Main {
         }
         else {
             return Integer.toString(numbers[n-1]) + " " + findReverse(n-1, numbers);
+        }
+    }
+    public static boolean isAllNumbers(String text) {
+        if (text.length() == 1) {
+            return Character.isDigit(text.charAt(0));
+        }
+        else {
+            return Character.isDigit(text.charAt(0)) && isAllNumbers(text.substring(1));
         }
     }
 }
