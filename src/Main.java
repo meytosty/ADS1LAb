@@ -8,7 +8,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println(findMin(n, arr));
+        System.out.println(findAverage(n, arr));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -18,5 +18,12 @@ public class Main {
             }
         }
         return min;
+    }
+    public static double findAverage(int n, int[] numbers) {
+        double total = numbers[0];
+        for (int i = 1; i < n; i++) {
+            total += numbers[i];
+        }
+        return total / n;
     }
 }
