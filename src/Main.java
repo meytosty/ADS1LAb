@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String text = sc.nextLine();
-        System.out.println(isAllNumbers(text));
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        System.out.println(findBin(n, k));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -68,6 +69,14 @@ public class Main {
         }
         else {
             return Character.isDigit(text.charAt(0)) && isAllNumbers(text.substring(1));
+        }
+    }
+    public static int findBin(int n, int k) {
+        if (k == 0 || k == n) {
+            return 1;
+        }
+        else {
+            return findBin(n-1, k-1) + findBin(n-1, k);
         }
     }
 }
