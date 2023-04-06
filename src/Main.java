@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
         int n = sc.nextInt();
-        System.out.println(findFib(n));
+        System.out.println(findPow(a, n));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -44,6 +45,14 @@ public class Main {
         }
         else {
             return findFib(n-1) + findFib(n-2);
+        }
+    }
+    public static int findPow(int a, int n) {
+        if (n == 1) {
+            return a;
+        }
+        else {
+            return a * findPow(a, n-1);
         }
     }
 }
