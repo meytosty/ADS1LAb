@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println(isNumberPrime(n));
+        System.out.println(findFact(n));
     }
     public static int findMin(int n, int[] arr) {
         int min = arr[0];
@@ -29,5 +29,13 @@ public class Main {
             }
         }
         return true;
+    }
+    public static int findFact(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        else {
+            return n * findFact(n-1);
+        }
     }
 }
